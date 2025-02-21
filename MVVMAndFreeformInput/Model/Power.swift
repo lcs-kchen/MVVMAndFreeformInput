@@ -19,7 +19,7 @@ struct Power {
     var exponent: Int
     
     // MARK: Computed properties
-     
+    
     // A power is simply a shorter way of expressing
     // repeated multiplication.
     //
@@ -36,20 +36,34 @@ struct Power {
     //       = 9
     //
     // We will implement code that mimics this second example.
-    var result: Double {
-        
-        // Start by making the solution equal to 1
-        var solution = 1.0
-        
-        // Repeatedly multiply the base by itself
-        // as many more times as needed
-        for _ in 1...exponent {
-            solution *= base
+    
+    var result: String {
+        if exponent == 0 {
+            let solution = 1.0
+            return "\(solution)"
+        } else if base < 0 {
+                var solution = 1.0
+                
+                for _ in 1...exponent {
+                    solution *= base
+                }
+            return "1/\(solution)"
         }
         
-        // Return the solution
-        return solution
-        
+        else {
+                
+                // Start by making the solution equal to 1
+                var solution = 1.0
+                
+                // Repeatedly multiply the base by itself
+                // as many more times as needed
+                for _ in 1...exponent {
+                    solution *= base
+                }
+                
+                // Return the solution
+                return "\(solution)"
+            }
     }
 }
  
