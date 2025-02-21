@@ -32,19 +32,19 @@ struct PowerView: View {
                 HStack(alignment: .center) {
                     HStack(alignment: .top) {
                         
-                        Text("\(power.base.formatted())")
-                            .font(.system(size: 96))
+                        Text("(\(power.base.formatted()))")
+                            .font(.system(size: 40))
                         
                         Text("\(power.exponent)")
-                            .font(.system(size: 44))
+                            .font(.system(size: 20))
                     }
                     HStack {
  
                         Text("=")
-                            .font(.system(size: 96))
+                            .font(.system(size: 40))
  
-                        Text("\(power.result.formatted())")
-                            .font(.system(size: 96))
+                        Text(power.result)
+                            .font(.system(size: 40))
                     }
                 }
                 .lineLimit(1)
