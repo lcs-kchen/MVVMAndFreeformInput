@@ -37,40 +37,18 @@ struct Power {
     //
     // We will implement code that mimics this second example.
     
-    var result: String {
+    var result: Double {
         if exponent == 0 {
-            let solution = 1.0
-            return "\(solution)"
-        } else if base < 0 {
+            return 1.0
+        } else  {
             var solution = 1.0
-            for _ in 1...exponent {
+            
+            for _ in 1...abs(exponent) {
                 solution *= base
             }
             
-            // Return the solution
-            return "\(solution)"
-            
-        } else if exponent < 0 {
-            var solution = 1.0
-            let exponent = -1 * exponent
-            for _ in 1...exponent {
-                solution *= base
-            }
-        return "1/\(solution)"
-        } else {
-                
-                // Start by making the solution equal to 1
-                var solution = 1.0
-                
-                // Repeatedly multiply the base by itself
-                // as many more times as needed
-                for _ in 1...exponent {
-                    solution *= base
-                }
-                
-                // Return the solution
-                return "\(solution)"
-            }
+            return solution
+        }
     }
+    
 }
- 

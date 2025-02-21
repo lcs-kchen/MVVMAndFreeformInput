@@ -43,8 +43,20 @@ struct PowerView: View {
                         Text("=")
                             .font(.system(size: 40))
  
-                        Text(power.result)
-                            .font(.system(size: 40))
+                        if power.exponent >= 0 {
+                            Text("\(power.result)")
+                                .font(.system(size: 40))
+                        } else {
+                            VStack (spacing: 0) {
+                                Text("1")
+                                    .font(.system(size: 40))
+                                Rectangle()
+                                    .frame(height: 3)
+                                Text("\(power.result.formatted())")
+                                    .font(.system(size:40))
+                            }
+                        
+                        }
                     }
                 }
                 .lineLimit(1)
