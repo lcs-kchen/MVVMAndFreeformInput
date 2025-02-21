@@ -42,12 +42,21 @@ struct Power {
             let solution = 1.0
             return "\(solution)"
         } else if base < 0 {
-                var solution = 1.0
-                
-                for _ in 1...exponent {
-                    solution *= base
-                }
-            return "1/\(solution)"
+            var solution = 1.0
+            for _ in 1...exponent {
+                solution *= base
+            }
+            
+            // Return the solution
+            return "\(solution)"
+            
+        } else if exponent < 0 {
+            var solution = 1.0
+            let exponent = -1 * exponent
+            for _ in 1...exponent {
+                solution *= base
+            }
+        return "1/\(solution)"
         }
         
         else {
