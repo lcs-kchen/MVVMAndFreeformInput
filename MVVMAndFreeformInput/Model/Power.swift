@@ -57,9 +57,7 @@ struct Power {
                 solution *= base
             }
         return "1/\(solution)"
-        }
-        
-        else {
+        } else {
                 
                 // Start by making the solution equal to 1
                 var solution = 1.0
