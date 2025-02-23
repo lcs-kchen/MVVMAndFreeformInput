@@ -62,6 +62,17 @@ struct PowerView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
                 .frame(height: 300)
+                
+                // Add a button so that the result can be saved
+                Button {
+                    viewModel.saveResult()
+                    // DEBUG: Show how many items are in the resultHistory array
+                    print("There are \(viewModel.resultHistory.count) elements in the resultHistory array.")
+                } label: {
+                    Text("Save")
+                }
+                .buttonStyle(.borderedProminent)
+                .padding(.bottom)
  
             } else {
                 
