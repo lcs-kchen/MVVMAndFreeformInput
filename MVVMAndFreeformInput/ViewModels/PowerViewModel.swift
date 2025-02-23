@@ -11,6 +11,8 @@ import Foundation
 class PowerViewModel {
     
     // MARK: Stored properties
+    // Holds the list of previously computed and evaluated powers
+    var resultHistory: [Power] = []
     
     // Holds whatever the user has typed in the text fields
     var providedBase: String = ""
@@ -57,6 +59,22 @@ class PowerViewModel {
         self.providedBase = providedBase
         self.providedExponent = providedExponent
         self.recoverySuggestion = recoverySuggestion
+    }
+    // MARK: Function(s)
+    func saveResult() {
+        
+        // When there is a valid power based on user input...
+        if let power = self.power {
+            
+            // ... save that evaluated power at the top of the history of
+            // results
+            //
+            // NOTE: By inserting the newly evaluated power at the top of
+            //       the array, we ensure the user sees
+            //       the most recent result first.
+            self.resultHistory.insert(power, at: 0)
+        }
+        
     }
     
     
